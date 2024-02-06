@@ -16,7 +16,7 @@ public class HomePageGokwik {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath = "//*[@id='header']/div/a/im")
+	@FindBy(xpath = "//*[@id='header']/div/a/img")
 	WebElement logo;
 	public boolean islogoDisplayed() {
 		
@@ -29,6 +29,27 @@ public class HomePageGokwik {
 		ac.moveToElement(WhyGoKwik).perform();
 		
 		
+	}
+	@FindBy(xpath = "//h4[contains(text(),'About Us')]")
+	WebElement aboutUs ;
+	public void clickAboutUs() {
+		aboutUs.click();
+		
+		
+	}
+	
+	@FindBy(xpath = "//a[contains(text(),'Careers')]")
+	WebElement careers ;
+	public void clickCcareers() {
+		careers.click();
+		
+		
+	}
+	@FindBy(xpath = "//*[contains(text(),'On our journey so far')]")
+	WebElement journeySoFarText;
+	public boolean isjourneySoFarTextDisplayed() {
+		
+		return logo.isDisplayed();
 	}
 	
 }

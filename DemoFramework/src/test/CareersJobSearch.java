@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import PageObjects.CareersPageGokwik;
 import PageObjects.HomePageGokwik;
 import Utils.TestListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -18,23 +19,19 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 
 
-public class HomePageGokwikTest extends BrowserConfiguration{
+public class CareersJobSearch extends BrowserConfiguration{
 
 	
 	
-	@Test
-	void logoTest() {
-		HomePageGokwik hp = new HomePageGokwik(driver);
-		hp.islogoDisplayed();
-		
-		
-	}
+	
 	@Test
 	void aboutUsPage() {
 		HomePageGokwik hp = new HomePageGokwik(driver);
-		hp.goToWhyGoKwik();
-		hp.clickAboutUs();
-		hp.isjourneySoFarTextDisplayed();
+		CareersPageGokwik cp = new CareersPageGokwik(driver);
+		hp.clickCcareers();
+		cp.clickseeOurPositionsCTAs();
+		cp.enterJobSearchJobRole("SDET");
+		cp.selectSDETAUTOMATION();
 	
 		
 	}
